@@ -1,0 +1,76 @@
+
+.photowall-section{
+    position:relative;
+    /* set the height of the background here */
+    min-height:120vh !important;
+    overflow:hidden;
+}
+
+/* Jarallax background container */
+.photowall-section .jarallax-img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:120%;
+    height:120%;
+    transform:translate(-10%, -10%);
+}
+
+/* Photowall layout */
+.photowall-grid{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.photowall-item{
+    width:16.666%;
+    padding:4px;
+}
+
+.photowall-item img{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+/* Use this to set image transparency to create cohesive style */
+.gridImageOverlay{
+    opacity:.95;
+}
+
+/* Content blocks */
+.content-block{
+    padding:40px;
+    border-radius:16px;
+    text-align:center;
+    max-width:45vw;
+    min-width:45vw;
+}
+
+/* Tablet */
+@media (max-width:1200px){
+    .content-block{
+        max-width:80vw;
+        min-width:80vw;
+    }
+}
+
+/* Photowall responsive layout */
+@media (max-width:992px){
+    .photowall-item{
+        width:33.333%;
+    }
+    
+    
+}
+
+/*
+@media (max-width:576px){
+    .photowall-item{
+        width:50%;
+    }
+}
+
+*/
+
+

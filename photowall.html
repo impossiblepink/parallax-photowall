@@ -1,0 +1,59 @@
+<div class="jarallax photowall-section" data-speed="0.5">
+    
+    {% assign Items = Items | Sort:'Order' %}
+
+    <!-- PARALLAX BACKGROUND -->
+    <div class="jarallax-img">
+        <div class="photowall-grid">
+            {% for item in Items %}
+            <div class="photowall-item">
+                <img class="gridImageOverlay rounded-sm"
+                     src="/GetImage.ashx?Guid={{ item | Attribute:'Image','RawValue' }}"
+                     alt="{{ item.Title }}">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="container position-relative z-10">
+
+        <div class="d-flex flex-column justify-content-center align-items-center">
+
+            <div class="content-block mb-5 bg-white" style="margin-top: 30vh">
+                <h3>Find a Dream Team</h3>
+                <p class="mb-4 fw-medium">
+                    Every week, hundreds of people come together to serve with a common mission. If you're ready to find a Dream Team, we'll help you find your spot here:
+                </p>
+                <a href="/serve" class="co-btn co-btn-primary bg-teal">
+                    Join a Dream Team
+                </a>
+            </div>
+
+            <div class="content-block bg-white" style="margin-bottom: 30vh;">
+                <h3>Meet a Need</h3>
+                <p class="mb-4 fw-medium">
+                    Small acts, big impact. If you're looking to meet a one-time need, you can find the next opportunity here:
+                </p>
+                <a href="/serve" class="co-btn co-btn-primary bg-teal">
+                    Serve
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Jarallax library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.11.1/jarallax.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    jarallax(document.querySelectorAll('.jarallax'), {
+        speed: 0.5
+    });
+});
+</script>
